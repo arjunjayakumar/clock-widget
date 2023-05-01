@@ -1,9 +1,13 @@
 <div class="clock-container">
-  <div class="clock">
+  <section class="clock">
     <div class="hands">
       <div class="hour" [style.transform]="'rotate(' + hour + 'deg)'"></div>
       <div class="minute" [style.transform]="'rotate(' + minute + 'deg)'"></div>
       <div class="second" [style.transform]="'rotate(' + second + 'deg)'"></div>
     </div>
-  </div>
+  </section>
+
+  <section>
+    <h1>{{ date | date : "hh:mm:ss a" }}</h1>
+  </section>
 </div>

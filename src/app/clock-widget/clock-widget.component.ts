@@ -17,6 +17,7 @@ export class ClockWidgetComponent implements OnInit, OnDestroy {
   public hour = 0;
   public minute = 0;
   public second = 0;
+  public date = new Date();
 
   private clockSubscription = new Subscription();
 
@@ -32,10 +33,10 @@ export class ClockWidgetComponent implements OnInit, OnDestroy {
    * Functionality to calculate dqata required for the clock
    */
   private clock(): void {
-    const date = new Date(),
-      hours = ((date.getHours() + 11) % 12) + 1,
-      minutes = date.getMinutes(),
-      seconds = date.getSeconds();
+    this.date = new Date();
+    const hours = ((this.date.getHours() + 11) % 12) + 1,
+      minutes = this.date.getMinutes(),
+      seconds = this.date.getSeconds();
 
     this.hour = hours * 30;
     this.minute = minutes * 6;
