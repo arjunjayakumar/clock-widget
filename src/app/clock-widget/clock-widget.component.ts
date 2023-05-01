@@ -30,7 +30,7 @@ export class ClockWidgetComponent implements OnInit, OnDestroy {
   }
 
   /**
-   * Functionality to calculate dqata required for the clock
+   * Functionality to calculate angle data required for the clock
    */
   private clock(): void {
     this.date = new Date();
