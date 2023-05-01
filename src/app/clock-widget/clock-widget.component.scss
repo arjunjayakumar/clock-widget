@@ -1,0 +1,112 @@
+.clock-container {
+  background: #f3f3f3;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+
+  .clock {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #2e2c2f;
+    width: 15.625rem;
+    height: 15.625rem;
+    border-radius: 50%;
+
+    .hands {
+      position: relative;
+      top: 50%;
+      left: 50%;
+      height: 100%;
+      width: 100%;
+
+      .hour,
+      .minute,
+      .second {
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        transform: rotate(0deg);
+        transform-origin: bottom-center;
+        width: 0.25rem;
+        border-radius: 0.125rem;
+      }
+
+      .hour {
+        background: black;
+        height: 3.125rem;
+        top: -20%;
+      }
+
+      .minute {
+        background: black;
+        height: 5.625rem;
+        top: -36%;
+      }
+
+      .second {
+        background: #ff0f7b;
+        width: 0.125rem;
+        height: 5rem;
+        top: -32%;
+      }
+    }
+  }
+}
+
+.clock {
+  &::before {
+    content: "";
+    z-index: -1;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: linear-gradient(-45deg, #295df8 0%, #ff0f7b 100%);
+    transform: translate3d(0rem, 1.25rem, 0) scale(1.2);
+    filter: blur(2.5rem);
+    opacity: var(0.8);
+    transition: opacity 0.3s;
+    border-radius: inherit;
+    -webkit-animation: blobby 5s infinite ease;
+    animation: blobby 5s infinite ease;
+  }
+
+  &::after {
+    content: "";
+    z-index: -1;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: inherit;
+    border-radius: inherit;
+  }
+}
+
+@keyframes blobby {
+  0% {
+    transform: translate3d(0rem, 1.25rem, 0) scale(1.2);
+  }
+
+  20% {
+    transform: translate3d(0rem, 0.625rem, 0) scale(0.9) rotate(20deg);
+  }
+
+  50% {
+    transform: translate3d(0rem, 1.25rem, 0) scale(1) rotate(0deg);
+  }
+
+  70% {
+    transform: translate3d(0rem, 0.625rem, 0) scale(1.4) rotate(20deg);
+  }
+
+  0% {
+    transform: translate3d(0rem, 1.25rem, 0) scale(1.2);
+  }
+}
