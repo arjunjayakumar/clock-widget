@@ -1,9 +1,9 @@
 <div class="clock-container">
   <div class="clock">
     <div class="hands">
-      <div class="hour" #hour></div>
-      <div class="minute" #minute></div>
-      <div class="second" #second></div>
+      <div class="hour" [style.transform]="'rotate(' + hour + 'deg)'"></div>
+      <div class="minute" [style.transform]="'rotate(' + minute + 'deg)'"></div>
+      <div class="second" [style.transform]="'rotate(' + second + 'deg)'"></div>
     </div>
   </div>
 </div>
