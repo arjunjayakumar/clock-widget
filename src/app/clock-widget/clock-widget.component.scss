@@ -30,7 +30,7 @@
         bottom: 0;
         right: 0;
         transform: rotate(0deg);
-        transform-origin: bottom center;
+        transform-origin: center bottom;
         width: 0.25rem;
         border-radius: 0.125rem;
       }
@@ -43,15 +43,15 @@
 
       .minute {
         background: blanchedalmond;
-        height: 5.625rem;
-        top: -36%;
+        height: 5rem;
+        top: -32%;
       }
 
       .second {
         background: red;
         width: 0.125rem;
-        height: 5rem;
-        top: -32%;
+        height: 5.625rem;
+        top: -36%;
       }
     }
   }
