@@ -41,7 +41,7 @@ export class ClockWidgetComponent implements OnInit, OnDestroy {
     this.hour = hours * 30;
     this.minute = minutes * 6;
     this.second = seconds * 6;
-    console.log(this.hour, this.minute, this.second);
+
     this.changeDetectorRef.detectChanges();
   }
 
